@@ -198,5 +198,7 @@ BEGIN
 	END CATCH
 END
 
+-- ===========================================
 -- Execute the Silver Layer Stored Procedure
+-- ===========================================
 EXEC Silver.load_Silver
