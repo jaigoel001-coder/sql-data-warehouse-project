@@ -31,6 +31,7 @@ LEFT JOIN Silver.erp_cust_az12 AS ca
 ON ci.cst_key = ca.CID
 LEFT JOIN Silver.erp_loc_a101 AS la
 ON ci.cst_key = la.CID
+ORDER BY 1, 2;
 
 -- ============================================================================
 -- Checking 'gold.product_key'
@@ -54,7 +55,7 @@ ON pn.cat_id = pc.ID
 WHERE prd_end_dt IS NULL   -- Filter out all historical data
 )t
 GROUP BY prd_key
-HAVING COUNT(*) > 1
+HAVING COUNT(*) > 1;
 
 -- ===========================================================================
 -- Checking 'gold.fact_sales'
@@ -68,7 +69,7 @@ ON fs.Customer_key = c.Customer_key
 LEFT JOIN Gold.dim_products p
 ON fs.product_key = p.product_key
 WHERE c.Customer_key IS NULL OR
-	    p.product_key IS NULL
+	    p.product_key IS NULL;
 
 
-ORDER BY 1, 2
+
